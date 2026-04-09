@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <h2>Matt's super awesome amazing website of favourite shows and stuff</h2>
+    <a href="/form">Form</a>
+    <a href="/display">Display</a>
+    <a href="/remove">Remove</a>
+    <a href="/">Back</a>
+
+     {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+   {% block body %}
+
+
+   {% endblock %}
+
+</body>
+</html>
