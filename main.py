@@ -13,5 +13,12 @@ shows = {}
 @app.route('/')
 def title_page():
     if "shows" not in session:
-        flash("Welcome to the site, please add a game to get started!!")
+        flash("Welcome in have a seat and add your favourite shows!")
     return render_template("main.html")
+
+
+@app.route('/form')
+def grabbing():
+    return render_template('form.html')
+
+
