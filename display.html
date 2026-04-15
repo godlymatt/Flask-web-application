@@ -1,8 +1,20 @@
-{% extends 'index.html' %}
+{% extends 'home.html' %}
 
 
 {% block body %}
     <h2>List of shows</h2>
     <ul>
-        
+        {% for name, show in shows.items() %}
+            <li>{{ name }}:
+            {% for key, value, in show.items() %}
+                {% if key == 'img' %}
+                    <image src="{{posterLocation}}/{{value}}"></image>
+                {% else %}
+                    <span>{{key}} : {{value}}</span>
+                {% endif %}
+
+            {% endfor %}
+            </li>
+        {% endfor %}
     </ul>
+{% endblock %}
