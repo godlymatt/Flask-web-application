@@ -6,8 +6,8 @@
     <ul>
         {% for name, show in shows.items() %}
             <li>{{ name }}:
-            {% for key, value, in show.items() %}
-                {% if key == 'img' %}
+            {% for key, value in show.items() %}
+                {% if key == 'poster' %}
                     <image src="{{posterLocation}}/{{value}}"></image>
                 {% else %}
                     <span>{{key}} : {{value}}</span>

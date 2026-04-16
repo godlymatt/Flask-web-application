@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, flash
 from flask_session import Session
 import os
 
@@ -9,13 +9,16 @@ app.config['SESSION_TYPE'] = "filesystem"
 
 Session(app)
 
+posterSaveLocation = "images"
+allowed_types = [".png", ".jpg", ".gif", ".webp"]
+
 shows = {}
 
 @app.route('/')
 def title_page():
     if "shows" not in session:
         flash("Welcome in have a seat and add your favourite shows!")
-    return render_template("main.html")
+    return render_template("home.html")
 
 
 @app.route('/form')
