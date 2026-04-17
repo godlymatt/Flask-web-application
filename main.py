@@ -51,5 +51,24 @@ def displaying():
     print(session)
     return render_template('display.html', shows = session.get("shows", {}), posterLocation = posterSaveLocation)
 
+@app.route('/remove', methods=['GET', 'POST'])
+def remove_show():
+    shows = session.get("shows", {})
+
+    if request.method == 'POST':
+        selected_show = request.form.get('show_name')
+        if selected_show and selected_show in shows:
+            shows.pop(selected_show, None)
+            if shows:
+                session["shows"] = shows
+            else:
+                session.pop("shows", None)
+            session.modified = True
+            flash(f"Show {selected_show} has been removed.")
+        else:
+            flash("Please select a valid show to remove.")
+
+    return render_template('remove.html', shows=shows)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
