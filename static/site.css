@@ -1,0 +1,48 @@
+#title {
+
+    text-align: center;
+    border: 2px black solid;
+    background: -webkit-linear-gradient(purple, skyblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#directories {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+
+#words {
+    font-size: large;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#form {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#remove {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#mike {
+    position: relative;
+}
+
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}

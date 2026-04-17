@@ -2,23 +2,28 @@
 
 
 {% block body %}
-    <h2>Please enter a show you really enjoy!</h2>
-    <form method="post" action="/hello" enctype="multipart/form-data">
-        <p>Show Name</p>
-        <input type="text" name="name" required>
-        <br><br>
-        <p>Favourite Character</p>
-        <input type="text" name="char" required>
-        <br><br>
-        <p>Small Summary</p>
-        <input type="text" name="sum" required>
-        <br><br>
-        <p>Start Year</p>
-        <input type="text" name="start" required>
-        <br><br>
-        <p>Insert a poster for this show</p>
-        <input type="file" name="showPic" required>
-        <br><br>
-        <input type="submit" value="submit">
-    </form>
+    <div id="form">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h2>Please enter a show you really enjoy!</h2>
+            <form id="form" method="post" action="/hello" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you would like to submit this show?');">
+                <p>Show Name</p>
+                <input type="text" name="name" required>
+                <br><br>
+                <p>Favourite Character</p>
+                <input type="text" name="char" required>
+                <br><br>
+                <p>Small Summary</p>
+                <input type="text" name="sum" required>
+                <br><br>
+                <p>Start Year</p>
+                <input type="text" name="start" required>
+                <br><br>
+                <p>Insert a poster for this show</p>
+                <input type="file" name="showPic" required>
+                <br><br>
+                <input type="submit" value="submit">
+            </form>
+            <script src="{{ url_for('static', filename='site.js') }}"></script>
+        </div>
+    </div>
 {% endblock %}

@@ -9,7 +9,7 @@ app.config['SESSION_TYPE'] = "filesystem"
 
 Session(app)
 
-posterSaveLocation = "images"
+posterSaveLocation = "static"
 allowed_types = [".png", ".jpg", ".gif", ".webp"]
 
 shows = {}

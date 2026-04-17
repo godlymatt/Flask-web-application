@@ -2,19 +2,23 @@
 
 
 {% block body %}
-    <h2>List of shows</h2>
-    <ul>
-        {% for name, show in shows.items() %}
-            <li>{{ name }}:
-            {% for key, value in show.items() %}
-                {% if key == 'poster' %}
-                    <image src="{{posterLocation}}/{{value}}"></image>
-                {% else %}
-                    <span>{{key}} : {{value}}</span>
-                {% endif %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h2>List of shows</h2>
+            {% for name, show in shows.items() %}
+                <li>{{ name }}:
+                {% for key, value in show.items() %}
+                    {% if key == 'poster' %}
+                        <image src="{{posterLocation}}/{{value}}"></image>
+                        <br>
+                    {% else %}
+                        <div id="words">
+                            <span>{{key}} : {{value}}</span>
+                            <br>
+                        </div>
+                    {% endif %}
 
+                {% endfor %}
+                </li>
             {% endfor %}
-            </li>
-        {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
