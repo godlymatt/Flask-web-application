@@ -17,14 +17,15 @@
         <a href="/remove" id="remove">Remove</a>
         <a href="/" id="back">Back</a>
     </div>
-     {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <p>{{message}}</p>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
    {% block body %}
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
             <img id="mike" src="{{ url_for('static', filename='michael-jackson.gif') }}" alt="michael jackson">

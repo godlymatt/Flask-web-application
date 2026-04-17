@@ -5,6 +5,13 @@
     <div id="form">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
             <h2>Please enter a show you really enjoy!</h2>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
             <form id="form" method="post" action="/hello" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you would like to submit this show?');">
                 <p>Show Name</p>
                 <input type="text" name="name" required>

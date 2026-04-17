@@ -1,21 +1,30 @@
 {% extends 'home.html' %}
 
 {% block body %}
-    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h2>Remove a show</h2>
-        {% if shows %}
-            <form method="post" action="/remove">
-                <p>Select show to remove</p>
-                <select name="show_name" required>
-                    {% for name in shows.keys() %}
-                        <option value="{{ name }}">{{ name }}</option>
-                    {% endfor %}
-                </select>
-                <br><br>
-                <input type="submit" value="Remove">
-            </form>
-        {% else %}
-            <p>No shows are available to remove.</p>
-        {% endif %}
+    <div id="remove">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h2>Remove a show</h2>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% if shows %}
+                <form method="post" action="/remove">
+                    <p>Select show to remove</p>
+                    <select name="show_name" required>
+                        {% for name in shows.keys() %}
+                            <option value="{{ name }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Remove">
+                </form>
+            {% else %}
+                <p>No shows are available to remove.</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
